@@ -1,0 +1,141 @@
+{
+  "Nếu bạn đã tiếp xúc gần gũi với người bị COVID-19, bạn có thể bị nhiễm bệnh. Liên hệ chặt chẽ có nghĩa là bạn sống cùng hoặc đã ở trong môi trường dưới 1 mét từ những người mắc bệnh. Trong những trường hợp này, tốt nhất là ở nhà.": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4
+  },
+  "Nghiên cứu chỉ ra rằng trẻ em và thanh thiếu niên cũng có khả năng bị nhiễm bệnh như bất kỳ nhóm tuổi nào khác và có thể truyền bệnh.": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4
+  },
+  "Một số con chó và mèo (mèo nhà và một con hổ) tiếp xúc với người bị nhiễm bệnh đã cho kết quả dương tính với COVID-19. Ngoài ra, chồn dường như dễ bị nhiễm trùng. Trong điều kiện thí nghiệm, cả mèo và chồn đều có thể truyền bệnh cho các động vật khác cùng loài, nhưng không có bằng chứng nào cho thấy những động vật này có thể truyền bệnh cho người và đóng vai trò truyền bệnh COVID-19. COVID-19 chủ yếu lây lan qua các giọt được tạo ra khi người nhiễm bệnh ho, hắt hơi hoặc nói.": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4
+  },
+  "Thời gian giữa khi tiếp xúc với COVID-19 và thời điểm các triệu chứng bắt đầu thường là khoảng năm đến sáu ngày nhưng có thể dao động từ 1 -14 ngày.": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4
+  },
+  "Khi đi chợ, hãy giữ khoảng cách ít nhất 1 mét so với người khác và tránh chạm vào mắt, miệng và mũi. Nếu có thể, hãy vệ sinh tay cầm của xe đẩy hoặc giỏ mua sắm trước khi mua sắm. Khi về nhà, rửa tay kỹ và cả sau khi xử lý và lưu trữ các sản phẩm bạn đã mua.": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4
+  },
+  "COVID-19 là bệnh truyền nhiễm do coronavirus phát hiện gần đây nhất. Loại virus và bệnh mới này chưa được biết đến trước khi dịch bệnh bắt đầu ở Vũ Hán, Trung Quốc, vào tháng 12 năm 2019. COVID-19 hiện là đại dịch ảnh hưởng đến nhiều quốc gia trên toàn cầu. Chi tiết xem tại [đây](https://www.24h.com.vn/tin-tuc-quoc-te/ben-trong-noi-bat-nguon-dich-benh-khien-ngan-nguoi-nhiem-virus-corona-o-tq-c415a1119542.html)": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5
+  },
+  "Nếu bạn có các triệu chứng nhỏ, chẳng hạn như ho nhẹ hoặc sốt nhẹ, thường không cần phải tìm kiếm sự chăm sóc y tế. Ở nhà, tự cô lập và theo dõi các triệu chứng của bạn. Thực hiện theo hướng dẫn quốc gia về tự cô lập. \\nTuy nhiên, nếu bạn sống ở khu vực bị sốt rét hoặc sốt xuất huyết, điều quan trọng là bạn không bỏ qua các triệu chứng sốt. Tìm kiếm sự trợ giúp y tế. Khi bạn đến cơ sở y tế, hãy đeo khẩu trang nếu có thể, giữ khoảng cách ít nhất 1 mét với người khác và không chạm vào bề mặt bằng tay. Nếu đó là một đứa trẻ bị bệnh hãy giúp đứa trẻ tuân theo lời khuyên này.\\nTìm kiếm sự chăm sóc y tế ngay lập tức nếu bạn khó thở hoặc đau / áp lực ở ngực. Nếu có thể, hãy gọi cho nhà cung cấp dịch vụ chăm sóc sức khỏe của bạn trước, để anh ấy / cô ấy có thể hướng dẫn bạn đến đúng cơ sở y tế.": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5
+  },
+  "Tự kiểm dịch có nghĩa là tách bản thân khỏi những người khác vì bạn đã tiếp xúc với người bị COVID-19 mặc dù bạn, chính bạn, không có triệu chứng.Trong quá trình tự kiểm dịch, bạn tự theo dõi các triệu chứng. Mục tiêu của việc tự kiểm dịch là ngăn ngừa lây truyền. Vì những người bị bệnh với COVID-19 có thể lây nhiễm cho những người ngay lập tức tự kiểm dịch có thể ngăn ngừa một số bệnh nhiễm trùng xảy ra. .": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3
+  },
+  "Kiểm dịch có nghĩa là hạn chế các hoạt động hoặc tách những người không bị bệnh nhưng có thể đã bị phơi nhiễm với COVID-19. Mục tiêu là để ngăn ngừa sự lây lan của bệnh tại thời điểm khi mọi người chỉ phát triển các triệu chứng.": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3
+  },
+  "Thực hành vệ sinh tay và hô hấp rất quan trọng tại mọi thời điểm và là cách tốt nhất để bảo vệ người khác và chính bạn.": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3
+  },
+  "Virus corona là một họ virus lớn có thể gây bệnh ở động vật hoặc người. Ở người, một số loại coronavirus được biết là gây nhiễm trùng đường hô hấp từ cảm lạnh thông thường đến các bệnh nghiêm trọng hơn như Hội chứng hô hấp Trung Đông (MERS) và Hội chứng hô hấp cấp tính nặng (SARS). Các coronavirus được phát hiện gần đây nhất gây ra bệnh coronavirus COVID-19.": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4
+  },
+  "Chưa. Cho đến nay, không có vắc-xin và không có thuốc chống vi-rút cụ thể chống lại COVID-19. Tuy nhiên, .people, đặc biệt là những người mắc bệnh nghiêm trọng, có thể cần phải nhập viện để họ có thể được điều trị cứu sống cho các biến chứng .. Hầu hết bệnh nhân hồi phục nhờ chăm sóc như vậy.": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 6
+  },
+  "Không. Thuốc kháng sinh không có tác dụng chống lại virus; họ chỉ làm việc trên nhiễm trùng vi khuẩn. COVID-19 là do virus gây ra, do đó kháng sinh không có tác dụng. Không nên sử dụng kháng sinh như một biện pháp phòng ngừa hoặc điều trị COVID-19. Trong bệnh viện, các bác sĩ đôi khi sẽ sử dụng kháng sinh để ngăn ngừa hoặc điều trị nhiễm trùng thứ cấp do vi khuẩn có thể là biến chứng của COVID-19 ở những bệnh nhân bị bệnh nặng. Chúng chỉ nên được sử dụng theo chỉ dẫn của bác sĩ để điều trị nhiễm trùng do vi khuẩn.": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5
+  },
+  "Mặc dù các điều tra ban đầu cho thấy virus có thể có trong phân trong một số trường hợp, cho đến nay, vẫn chưa có báo cáo về việc truyền COVID-19 qua đường phân. Ngoài ra, không có bằng chứng cho đến nay về sự sống sót của virus COVID-19 trong nước hoặc nước thải.": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 6
+  },
+  "Theo dõi các thông tin mới nhất về ổ dịch COVID-19, có sẵn trên trang web của WHO và thông qua cơ quan y tế công cộng quốc gia và địa phương. Hầu hết các quốc gia trên thế giới đã thấy các trường hợp COVID-19 và nhiều người đang trải qua các vụ dịch. Chính quyền ở Trung Quốc và một số quốc gia khác đã thành công trong việc làm chậm sự bùng phát của họ. Tuy nhiên, tình hình là không thể đoán trước vì vậy hãy kiểm tra thường xuyên để biết tin tức mới nhất.": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5
+  },
+  "Các triệu chứng phổ biến nhất của COVID-19 là sốt, ho khan và mệt mỏi. Một số bệnh nhân có thể bị đau nhức, nghẹt mũi, đau họng hoặc tiêu chảy. Những triệu chứng này thường nhẹ và bắt đầu dần dần. Một số người bị nhiễm bệnh nhưng chỉ có triệu chứng rất nhẹ. Hầu hết mọi người (khoảng 80%) khỏi bệnh mà không cần điều trị tại bệnh viện. Khoảng 1 trong số 5 người bị COVID-19 bị bệnh nặng và khó thở. Người già và những người có vấn đề y tế tiềm ẩn như huyết áp cao, các vấn đề về tim và phổi, tiểu đường hoặc ung thư, có nguy cơ mắc bệnh nghiêm trọng cao hơn. Tuy nhiên, bất cứ ai cũng có thể bắt COVID-19 và bị bệnh nặng. Ngay cả những người có triệu chứng rất nhẹ của COVID-19 cũng có thể truyền virut. Mọi người ở mọi lứa tuổi bị sốt, ho và khó thở nên đi khám.": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4
+  },
+  "Tự cô lập là một biện pháp quan trọng được thực hiện bởi những người có triệu chứng COVID-19 để tránh lây nhiễm cho những người khác trong cộng đồng, bao gồm cả các thành viên gia đình.": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3
+  },
+  "Điều quan trọng nhất cần biết về coronavirus trên bề mặt là chúng có thể dễ dàng được làm sạch bằng các chất khử trùng thông thường trong gia đình sẽ tiêu diệt virus. Các nghiên cứu đã chỉ ra rằng virus COVID-19 có thể tồn tại tới 72 giờ trên nhựa và thép không gỉ, dưới 4 giờ trên đồng và dưới 24 giờ trên các tông.": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4
+  },
+  "Trái cây và rau quả là thành phần quan trọng của chế độ ăn uống lành mạnh. Rửa chúng giống như cách bạn nên làm trong mọi trường hợp: trước khi xử lý chúng, rửa tay bằng xà phòng và nước. Sau đó, rửa kỹ trái cây và rau quả bằng nước sạch, đặc biệt nếu bạn ăn chúng sống.": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4
+  },
+  "Mọi người có thể bắt COVID-19 từ những người khác có virus. Bệnh lây lan chủ yếu từ người sang người qua những giọt nhỏ từ mũi hoặc miệng, bị trục xuất khi người bị COVID-19 ho, hắt hơi hoặc nói. Những giọt này tương đối nặng, không đi xa và nhanh chóng chìm xuống mặt đất. Mọi người có thể bắt gặp COVID-19 nếu họ hít phải những giọt nước này từ một người bị nhiễm vi-rút. Đây là lý do tại sao điều quan trọng là phải cách xa người khác ít nhất 1 mét (3 feet). Những giọt nước này có thể rơi xuống các vật thể và bề mặt xung quanh người như bàn, tay nắm cửa và tay vịn. Mọi người có thể bị nhiễm bệnh khi chạm vào những vật thể hoặc bề mặt này, sau đó chạm vào mắt, mũi hoặc miệng. Đây là lý do tại sao cần rửa tay thường xuyên bằng xà phòng và nước hoặc làm sạch bằng cồn chà tay. WHO đang đánh giá nghiên cứu liên tục về những cách mà COVID-19 được lan truyền và sẽ tiếp tục chia sẻ những phát hiện cập nhật.": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3
+  },
+  "COVID-19 được lan truyền thông qua truyền từ người sang người.": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5
+  },
+  "accuracy": 1.0,
+  "macro avg": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 88
+  },
+  "weighted avg": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 88
+  }
+}

@@ -1,0 +1,67 @@
+intents:
+  - greet {triggers: action_greet}
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - ask_for_help
+  - faq
+  - ask_death
+  - ask_confirm
+  - ask_resolve
+  - ask_all
+  - out_of_scope
+
+actions:
+  - respond_faq
+
+responses:
+  utter_greet:
+  - text: "Xin chào =)"
+  - text: "Chào đằng ấy nha =)"
+  - text: "Hi, Corasa rất hân hạnh được tiếp chuyện với bạn =)"
+
+  utter_goodbye:
+  - text: "Bye bye bạn tôi nhé!"
+  - text: "Bái bai ..."
+
+  utter_affirm:
+  - text: "Ha..ha.."
+  - text: "hehe"
+
+  utter_deny:
+  - text: "hmmm... Tiếp tục nào"
+
+  utter_mood_great:
+  - text: "Quá tuyệt, tiếp tục thế nhé! :D"
+
+  utter_mood_unhappy:
+  - text: "I'm so sorry :("
+
+  utter_bot_challenge:
+  - text: "Xin chào bạn, mình là Corasa. Nếu có bất cứ thắc mắc gì liên quan đến dịch COVID-19 hãy đặt câu hỏi cho mình, mình sẽ trả lời trong tầm hiểu biết của mình :D. Have a good talking!."
+
+  utter_ask_for_help:
+  - text: "Mình có thể giúp gì được bạn? =)"
+  - text: "ĐƯợc giúp đỡ bạn là niềm vinh hạnh cho Corasa :D"
+
+  utter_ask_resolve:
+  - text: "I am a bot, powered by resolve."
+
+  utter_ask_confirm:
+  - text: "I am a bot, powered by confirm."
+
+  utter_ask_death:
+  - text: "I am a bot, powered by dead."
+
+  utter_ask_all:
+  - text: "I am a bot, powered by all."
+
+  utter_out_of_scope:
+  - text: "Xin lỗi, tôi không thể xử lý vấn đề này."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
