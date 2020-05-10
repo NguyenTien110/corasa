@@ -44,6 +44,16 @@ Sau đó hãy chạy lệnh `rasa train` để train model (có thể dùng tùy
 
 ## 😉 Một số command line khác
 
+`rasa init` - Tạo 1 project mới với các file data, config, domain mặc định.
+
+`rasa test` - Kiểm tra mô hình Rasa được đào tạo bằng cách sử dụng dữ liệu và kịch bản NLU thử nghiệm của bạn.
+
+`rasa data split nlu` - Thực hiện phân chia dữ liệu NLU của bạn theo tỷ lệ phần trăm được chỉ định.
+
+`rasa data convert nlu` - Chuyển đổi data NLU training giữa các định dạng.
+
+`rasa -h` - Hiển thị các command
+
 `rasa shell` - Chat với chatbot mình vừa tạo ra.
 
 `rasa visualize` - Mô hình hóa các trường hợp của cuộc trò chuyện.
