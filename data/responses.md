@@ -1,3 +1,7 @@
+## general question:
+* faq/general
+- Hãy hỏi mình một vài câu hỏi để biết về dịch COVID-19 nhé :/
+
 ## what is a corona virus?:
 * faq/corona_virus
 - Virus corona là một họ virus lớn có thể gây bệnh ở động vật hoặc người. Ở người, một số loại coronavirus được biết là gây nhiễm trùng đường hô hấp từ cảm lạnh thông thường đến các bệnh nghiêm trọng hơn như Hội chứng hô hấp Trung Đông (MERS) và Hội chứng hô hấp cấp tính nặng (SARS). Các coronavirus được phát hiện gần đây nhất gây ra bệnh coronavirus COVID-19. 100 câu hỏi khác có thể xem chi tiết tại [đây](https://www.lshtm.ac.uk/newsevents/expert-opinion/100-questions-peter-piot-lshtm-director)

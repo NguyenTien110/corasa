@@ -73,83 +73,89 @@
 - Có phải tôi đang nói chuyện với bot?
 - có phải tôi đang nói chuyện với người?
 
-##intent:ask_for_help
+## intent:ask_for_help
 - Bot ơi, tôi có chuyện cần hỏi
 - Tôi cần 1 lời khuyên
 - Tôi cần giúp đỡ
 - Bạn có thể giúp tôi không?
 
-##intent:faq/corona_virus
+## intent: faq/general
+- Thông tin COVID ?
+- Cho hỏi thông tin dịch COVID-19 với
+- Mình muốn hỏi về dịch COVID-19
+- Mình muốn biết các thông tin về COVID-19
+
+## intent:faq/corona_virus
 - Corona là gì?
 - Virus Corona là cái gì?
 - Corona là con gì?
 - Virus này là gì?
 
-##intent:faq/COVID_19
+## intent:faq/COVID_19
 - COVID-19 là gì?
 - Dịch COVID-19 là dịch gì?
 - SARS-CoV-2 là gì?
 - Dịch corona là dịch gì?
 - SARS-Cov-2 là dịch gì?
 
-##intent:faq/symtoms_of_COVID_19
+## intent:faq/symtoms_of_COVID_19
 - Triệu chứng của COVID-19 là gì?
 - Biểu hiện của COVID-19 là gì?
 - Người bệnh sẽ có biểu hiện thế nào khi mắc corona?
 - Các triệu chứng của người mắc COVID-19?
 
-##intent:faq/thing_to_do_when_have_symtoms
+## intent:faq/thing_to_do_when_have_symtoms
 - Tôi nên làm gì nếu tôi có các triệu chứng COVID-19?
 - Khi nào tôi nên tìm kiếm sự chăm sóc y tế?
 - Tôi có triệu chứng của COVID-19, tôi nên làm gì?
 - Tôi phải làm gì?
 - Tôi nên làm gì trước?
 
-##intent:faq/COVID_19_spread
+## intent:faq/COVID_19_spread
 - COVID-19 lây lan như thế nào?
 - Dịch này lây thế nào?
 - Làm sao dịch này lại lây nhanh vậy?
 
-##intent:faq/save_health_when_dont_know_who_got_sick
+## intent:faq/save_health_when_dont_know_who_got_sick
 - Làm thế nào chúng ta có thể bảo vệ người khác và chính mình nếu chúng ta không biết ai bị nhiễm bệnh?
 - Không biết ai bị bệnh thì bảo vệ sức khỏe như thế nào?
 - Phải làm sao nếu không biết ai bị nhiễm bệnh?
 
-##intent:faq/thing_to_do_when_contacted_with_disease
+## intent:faq/thing_to_do_when_contacted_with_disease
 - Phải làm sao nếu tôi đã tiếp xúc với người bệnh?
 - Tôi nên làm gì nếu đã tiếp xúc gần với người nhiễm corona?
 - Tôi cần làm gì nếu đã tiếp xúc gần với người nhiễm covid-19?
 - Em mới tiếp xúc với người nghi nhiễm virus, em nên làm gì bây giờ?
 
-##intent:faq/self_isolate
+## intent:faq/self_isolate
 - Tự cô lập nghĩa là gì?
 - Tại sao tôi phải tự cô lập?
 - ai là người nên tự cô lập?
 
-##intent:faq/self_quarantine
+## intent:faq/self_quarantine
 - Tự cách ly là gì?
 - Tôi không có triệu chứng nhưng có thể tôi đã tiếp xúc COVID-19, tôi nên làm gì?
 - Khi nào tôi cần tự cách ly?
 
-##intent:faq/compare_self_isolate_self_quarantine_distancing
+## intent:faq/compare_self_isolate_self_quarantine_distancing
 - Tự cô lập và tự cách ly khác gì nhau ?
 - Tự cô lập, tự cách ly và tạo khoảng cách khác gì nhau?
 - So sánh tự cô lập và tự cách ly
 
-##intent:faq/children_and_adolescent
+## intent:faq/children_and_adolescent
 - Trẻ em và vị thành niên có thể bị nhiễm bệnh hay không?
 - Trẻ em có thể bị nhiễm Corona không ?
 - Trẻ vị thành niên và nhỏ hơn có thể mắc COVID-19 không?
 - Trẻ em có nguy cơ mắc COVID-19 không?
 
-##intent:faq/protect_and_prevent
+## intent:faq/protect_and_prevent
 - Tôi cần làm gì để bảo vệ và ngăn ngừa COVID-19?
 - Để tự bảo vệ và ngăn ngừa COVID-19 mọi người nên làm gì?
 - Việc cần làm để bảo vệ sức khỏe bản thân?
 - Làm thế nào để ngăn ngừa COVID-19 với mỗi người?
 - Cần phải làm thế nào để bảo vệ và ngăn ngừa COVID-19?
 
-##intent:faq/vaccine_drug_treatment
+## intent:faq/vaccine_drug_treatment
 - Đã có vắc-xin phòng ngừa COVID-19 chưa ?
 - Có thuốc nào chữa COVID-19 không?
 - Có phương pháp điều trị nào cho người mắc COVID-19 không?
@@ -157,51 +163,51 @@
 - Vắc-xin nào có thể phòng ngừa COVID-19?
 - Tôi cần uống thuốc gì để không bị COVID-19?
 
-##intent:faq/time_to_show_symtoms
+## intent:faq/time_to_show_symtoms
 - Nếu tôi bị nhiễm thì sau bao lâu mới có triệu chứng?
 - Các triệu chứng sẽ xuất hiện bao lâu kể từ khi tôi nhiễm?
 - Sau bao lâu thì người bệnh có các biểu hiện với COVID-19?
 - Triệu chứng COVID-19 sẽ xuất hiện sau bao nhiêu ngày?
 
-##intent:faq/connection_COVID_and_animals
+## intent:faq/connection_COVID_and_animals
 - Giữa động vật và COVID-19 có liên hệ gì không?
 - Có phải COVID-19 bắt nguồn từ động vật?
 - Mối liên hệ giữa COVID-19 và động vật là gì?
 - Động vật và Covid-19 có liên quan tới nhau không?
 - Động vật và COVID-19
 
-##intent:faq/catch_COVID_19_from_animals
+## intent:faq/catch_COVID_19_from_animals
 - Liệu thú cưng tôi có thể lây bệnh cho tôi không?
 - Thú cưng của tôi có thể truyền bệnh cho tôi không?
 - Động vật mắc bệnh có thể lây lan mầm bệnh cho con người được không?
 - Nếu động vật mắc bệnh thì con người tiếp xúc có nguy cơ nhiễm COVID-19 không?
 
-##intent:faq/virus_survive_on_surfaces
+## intent:faq/virus_survive_on_surfaces
 - Virus corona có thể tồn tại trên các vật thể trong bao lâu?
 - Virus tồn tại trên bề mặt bao lâu?
 - Virus có thể tồn tại ngoài môi trường bao lâu?
 - Không có vật chủ thì virus có thể tồn tại bao lâu?
 
-##intent:faq/safety_when_shopping
+## intent:faq/safety_when_shopping
 - Làm sao để đi chợ an toàn?
 - Các cửa hàng là nơi qua lại, tiếp xúc với nhiều người, làm sao để tránh khỏi mầm bệnh?
 - Có cách nào an toàn khi đi chợ không?
 - Sự an toàn khi đi chợ?
 
-##intent:faq/wash_fruit_and_vegetables
+## intent:faq/wash_fruit_and_vegetables
 - Cách rửa trái cây, rau quả an toàn.
 - Trái cây, rau quả làm thế nào để sạch?
 - Cách làm sạch trái cây rau quả
 - Tôi phải làm gì với trái cây và rau quả?
 
-##intent:faq/antibiotic_effectiveness
+## intent:faq/antibiotic_effectiveness
 - Kháng sinh có tác dụng gì với COVID-19 không?
 - Có thể điều trị corona bằng kháng sinh hay không?
 - Kháng sinh có hiệu quả như thế nào với covid-19?
 - Tôi có thể dùng kháng sinh để phòng ngừa covid-19 không?
 - Dùng kháng sinh để điều trị covid-19
 
-##intent:faq/faeces_from_disease
+## intent:faq/faeces_from_disease
 - Phân của người bệnh có thể lây bệnh không?
 - Phân của người bệnh có mang virus không?
 - tôi có thể bị lây bệnh từ phân người bênh không?
@@ -211,26 +217,26 @@
 
 ## intent:ask_death
 - bao người chết rồi
-- có bao nhiêu người chết
-- con số người chết là bao nhiêu
-- hiện có bao nhiêu người chết rồi
-- có nhiều người chết chưa
-- bao người tử vong rồi
-- có bao nhiêu người tử vong
-- con số người tử vong là bao nhiêu
-- hiện có bao nhiêu người tử vong rồi
-- có nhiều người tử vong chưa
-- bao người thiệt mạng rồi
-- có bao nhiêu người thiệt mạng
-- con số người thiệt mạng là bao nhiêu
-- hiện có bao nhiêu người thiệt mạng rồi
-- có nhiều người thiệt mạng chưa
-- bao người tèo rồi
-- có bao nhiêu người tèo
-- con số người tèo là bao nhiêu
-- hiện có bao nhiêu người tèo rồi
-- có nhiều người tèo chưa
-- có bao nhiêu người bệnh bị chết
+- có bao nhiêu người chết?
+- con số người chết là bao nhiêu?
+- hiện có bao nhiêu người chết rồi?
+- có nhiều người chết chưa?
+- bao người tử vong rồi?
+- có bao nhiêu người tử vong?
+- con số người tử vong là bao nhiêu?
+- hiện có bao nhiêu người tử vong rồi?
+- có nhiều người tử vong chưa?
+- bao người thiệt mạng rồi?
+- có bao nhiêu người thiệt mạng?
+- con số người thiệt mạng là bao nhiêu?
+- hiện có bao nhiêu người thiệt mạng rồi?
+- có nhiều người thiệt mạng chưa?
+- bao người tèo rồi?
+- có bao nhiêu người tèo?
+- con số người tèo là bao nhiêu?
+- hiện có bao nhiêu người tèo rồi?
+- có nhiều người tèo chưa?
+- có bao nhiêu người bệnh bị chết?
 
 ## intent:ask_confirm
 - bao người nhiễm rồi

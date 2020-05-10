@@ -1,5 +1,5 @@
 intents:
-  - greet {triggers: action_greet}
+  - greet : {trigger: action_greet}
   - goodbye
   - affirm
   - deny
@@ -16,6 +16,11 @@ intents:
 
 actions:
   - respond_faq
+  - action_default_ask_affirmation
+  - action_greet
+
+entities:
+  - name
 
 responses:
   utter_greet:
@@ -42,10 +47,11 @@ responses:
 
   utter_bot_challenge:
   - text: "Xin chào bạn, mình là Corasa. Nếu có bất cứ thắc mắc gì liên quan đến dịch COVID-19 hãy đặt câu hỏi cho mình, mình sẽ trả lời trong tầm hiểu biết của mình :D. Have a good talking!."
-
+  - text: "Xin chào, mình là Corasa nhé. Là Bot được tạo ra với mục đích giải đáp các vấn đề về dịch COVID-19, mình có trách nhiệm giúp đỡ tất cả anh em :D. Have a good talking!."
+  
   utter_ask_for_help:
   - text: "Mình có thể giúp gì được bạn? =)"
-  - text: "ĐƯợc giúp đỡ bạn là niềm vinh hạnh cho Corasa :D"
+  - text: "Được giúp đỡ bạn là niềm vinh hạnh cho Corasa :D"
 
   utter_ask_resolve:
   - text: "I am a bot, powered by resolve."

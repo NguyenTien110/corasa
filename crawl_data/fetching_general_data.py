@@ -88,7 +88,7 @@ def run_query(query):  # A simple function to use requests.post to make the API 
         raise Exception("Query failed to run by returning code of {}. {}".format(request.status_code, query))
 
 
-result = run_query(totalVietNam)
+# result = run_query(totalVietNam)
 # result = run_query(totalConfirmed)
 # result = run_query(totalRecovered)
 # result = run_query(totalDeaths)
