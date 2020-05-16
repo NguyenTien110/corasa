@@ -7,10 +7,16 @@
 
 # This is a simple example for a custom action which utters "Hello World!"
 
-import fetching_general_data
-from fetching_general_data import run_query
+from crawl_data import fetching_general_data
+from crawl_data.fetching_general_data import run_query
 from typing import Any, Text, Dict, List
 
+import logging
+logger = logging.Logger(__name__)
+
+import json
+
+from rasa_sdk.forms import FormAction
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import (
@@ -23,7 +29,7 @@ from rasa_sdk.events import (
 )
 
 class ActionGreetUser(Action):
-    """bo qua cac input khong luong truoc"""
+    """bỏ qua các input không lường trước"""
 
     def name(self):
         return "action_greet"
@@ -33,7 +39,7 @@ class ActionGreetUser(Action):
         return [UserUtteranceReverted()]
 
 class ActionDefaultAskAffirmation(Action):
-    """dua ra 1 vai cau hoi thuong gap khi khong hieu doi phuong noi gi"""
+    """đưa ra 1 vài câu hỏi thường gặp khi gặp intent không hiểu"""
 
     def name(self) -> Text:
         return "action_default_ask_affirmation"
@@ -90,13 +96,10 @@ class ActionDefaultAskAffirmation(Action):
                 }
             )
 
-        # /out_of_scope is a retrieval intent
-        # you cannot send rasa the '/out_of_scope' intent
-        # instead, you can send one of the sentences that it will map onto the response
         buttons.append(
             {
                 "title": "Something else",
-                "payload": "Tôi hỏi câu khác",
+                "payload": "Tôi hỏi câu khác :(",
             }
         )
 
@@ -120,19 +123,66 @@ class ActionDefaultAskAffirmation(Action):
 
         return button_title.format(**entities)
 
+# class ActionAskCovidInfor(Action):
+#     """lấy data realtime"""
 
-class RespondDataInternet(Action):
-    """lay data realtime"""
+#     def name(self) -> Text:
+#         return "action_ask_covid"
 
+#     # def __init__(self) -> None:
+#         # self.data = run_query(....)
+
+#     # def get_data(self):
+
+
+#     def run(self, dispatcher, tracker, domain):
+#         print(Action.name.__name__.)
+#         dispatcher.utter_message("Thanks for getting in touch, we’ll contact you soon")
+#         return []
+
+class ActionAskCovidInfor(FormAction):
     def name(self) -> Text:
-        return "action_fetch_data"
+        return "form_ask_covid"
 
-    def run(
-        self,
-        dispatcher: CollectingDispatcher,
-        tracker: Tracker,
-        domain: Dict[Text, Any],
-    ) -> List[EventType]:
+    @staticmethod
+    def required_slots(tracker: Tracker) -> List[Text]:
+        return ["country", "city"]
 
-    data = run_query(fetching_general_data.totalVietNam)
-    print(data)
+    def request_next_slot(self, dispatcher, tracker, domain):
+        user_message = tracker.latest_message.get("text")
+        logger.debug(user_message)
+        if user_message == "!end_form":
+            return self.deactivate()
+        else:
+            for slot in self.required_slots(tracker):
+                if self._should_request_slot(tracker, slot):
+                    logger.debug("Request next slot '%s'", slot)
+                    if slot == "country":
+                        dispatcher.utter_template("utter_ask_ask_country", tracker)
+                        mess = tracker.latest_message.get("text")
+                        return [SlotSet('country', mess)]
+
+                    if slot == "city":
+                        ask_country = tracker.get_slot("country")
+                        if(ask_country == "Việt Nam"):
+                            
+                            return [SlotSet('country', None)]
+                        else:
+                            dispatcher.utter_template("utter_ask_ask_city", tracker)
+                            mess = tracker.latest_message.get("text")
+                            return [SlotSet('country', mess)]
+        return None
+
+
+    def submit(self, dispatcher, tracker, domain) -> List[Dict]:
+        # do something here
+        intent = tracker.latest_message['intent'].get('name')
+        print(type(intent))
+        # if intent = ask_all
+
+
+        # intent != ask_all
+        request_next_slot(self, dispatcher, tracker, domain)
+
+        print(intent)
+        return []

@@ -36,7 +36,7 @@
 ## corona ask
 * greet: hello
   - utter_greet
-* COVID_19: COVID-19 là gì vậy?
+* faq: COVID-19 là gì vậy?
   - respond_faq
   - utter_ask_confirm
 * deny: không bao giờ

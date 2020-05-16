@@ -12,15 +12,28 @@ intents:
   - ask_confirm
   - ask_resolve
   - ask_all
+  - ask_VN
   - out_of_scope
 
 actions:
   - respond_faq
   - action_default_ask_affirmation
-  - action_greet
+  - action_ask_greet
 
 entities:
   - name
+  - country
+  - city
+
+forms:
+  - form_ask_covid
+
+slots:
+    country:
+      type: unfeaturized
+    city:
+      type: unfeaturized
+
 
 responses:
   utter_greet:
@@ -53,17 +66,23 @@ responses:
   - text: "Mình có thể giúp gì được bạn? =)"
   - text: "Được giúp đỡ bạn là niềm vinh hạnh cho Corasa :D"
 
+  utter_ask_ask_country:
+  - text: "Bạn muốn biết thông tin về Việt Nam hay quốc gia nào?"
+
+  utter_ask_ask_city:
+  - text: "Thành phố nào mà bạn quan tâm đến vậy?"
+
   utter_ask_resolve:
-  - text: "I am a bot, powered by resolve."
+  - text: "Sau đây là 1 vài thống kê bao gồm số người đã được chữa khỏi tính đến thời điểm hiện tại có thể bạn chưa biết."
 
   utter_ask_confirm:
-  - text: "I am a bot, powered by confirm."
+  - text: "Sau đây là 1 vài thống kê bao gồm số ca được xác nhận mắc COVID-19 tính đến thời điểm hiện tại có thể bạn chưa biết."
 
   utter_ask_death:
-  - text: "I am a bot, powered by dead."
+  - text: "Sau đây là 1 vài thống kê bao gồm số ca tử vong tính đến thời điểm hiện tại có thể bạn chưa biết."
 
   utter_ask_all:
-  - text: "I am a bot, powered by all."
+  - text: "Sau đây là 1 vài thống kê tình hình chung trên toàn thế giới tính đến thời điểm hiện tại."
 
   utter_out_of_scope:
   - text: "Xin lỗi, tôi không thể xử lý vấn đề này."

@@ -33,12 +33,34 @@
 ## corona ask
 * greet
   - utter_greet
-* COVID_19
+* faq
   - respond_faq
-  - utter_ask_confirm
 * deny
   - utter_goodbye
 
 ## Some question from FAQ
 * faq
-    - respond_faq
+  - respond_faq
+
+## Ask statistic death
+* ask_death
+  - utter_ask_death
+
+## Ask statistic all
+* ask_all
+  - utter_ask_all
+
+## Ask statistic resolve
+* ask_resolve
+  - utter_ask_resolve
+
+## Ask statistic confirm
+* ask_confirm
+  - utter_ask_confirm
+
+## ask country
+* ask_country
+  - form_ask_covid
+  - form{"name": "form_ask_covid"}   <!--Activate the form-->
+  - form{"name": null}               <!--Deactivate the form-->
+
