@@ -45,22 +45,30 @@
 ## Ask statistic death
 * ask_death
   - utter_ask_death
+  - form_ask_covid
+  - form{"name": "form_ask_covid"}   <!--Activate the form-->
+  - form{"name": null}               <!--Deactivate the form-->
 
 ## Ask statistic all
 * ask_all
   - utter_ask_all
+  - form_ask_covid
+  - form{"name": "form_ask_covid"}   <!--Activate the form-->
+  - form{"name": null}               <!--Deactivate the form-->
+ 
 
 ## Ask statistic resolve
 * ask_resolve
   - utter_ask_resolve
+  - form_ask_covid
+  - form{"name": "form_ask_covid"}   <!--Activate the form-->
+  - form{"name": null}               <!--Deactivate the form-->
 
 ## Ask statistic confirm
 * ask_confirm
   - utter_ask_confirm
-
-## ask country
-* ask_country
   - form_ask_covid
   - form{"name": "form_ask_covid"}   <!--Activate the form-->
   - form{"name": null}               <!--Deactivate the form-->
+
 

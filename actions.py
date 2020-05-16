@@ -9,7 +9,7 @@
 
 from crawl_data import fetching_general_data
 from crawl_data.fetching_general_data import run_query
-from typing import Any, Text, Dict, List
+from typing import Any, Text, Dict, List, Union
 
 import logging
 logger = logging.Logger(__name__)
@@ -123,23 +123,6 @@ class ActionDefaultAskAffirmation(Action):
 
         return button_title.format(**entities)
 
-# class ActionAskCovidInfor(Action):
-#     """lấy data realtime"""
-
-#     def name(self) -> Text:
-#         return "action_ask_covid"
-
-#     # def __init__(self) -> None:
-#         # self.data = run_query(....)
-
-#     # def get_data(self):
-
-
-#     def run(self, dispatcher, tracker, domain):
-#         print(Action.name.__name__.)
-#         dispatcher.utter_message("Thanks for getting in touch, we’ll contact you soon")
-#         return []
-
 class ActionAskCovidInfor(FormAction):
     def name(self) -> Text:
         return "form_ask_covid"
@@ -147,42 +130,59 @@ class ActionAskCovidInfor(FormAction):
     @staticmethod
     def required_slots(tracker: Tracker) -> List[Text]:
         return ["country", "city"]
+    def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
+        return {
+            "country": [
+                self.from_entity(entity="country"),
+                self.from_text(intent="inform"),
+            ],
+            "city": [
+                self.from_entity(entity="city"),
+                self.from_text(intent="inform")
+            ],
+        }
 
     def request_next_slot(self, dispatcher, tracker, domain):
         user_message = tracker.latest_message.get("text")
         logger.debug(user_message)
-        if user_message == "!end_form":
-            return self.deactivate()
-        else:
-            for slot in self.required_slots(tracker):
-                if self._should_request_slot(tracker, slot):
-                    logger.debug("Request next slot '%s'", slot)
-                    if slot == "country":
-                        dispatcher.utter_template("utter_ask_ask_country", tracker)
-                        mess = tracker.latest_message.get("text")
+
+        for slot in self.required_slots(tracker):
+            if self._should_request_slot(tracker, slot):
+                logger.debug("Request next slot '%s'", slot)
+                if slot == "country":
+                    dispatcher.utter_message(template="utter_ask_country")
+                    mess = tracker.latest_message['entities']
+
+                    print("messes: /{}", mess, type(mess))
+                    return [SlotSet('country', mess)]
+
+                if slot == "city":
+                    country = tracker.get_slot("country")
+                    if(country == "Việt Nam"):
+                        
+                        return [SlotSet('country', None)]
+                    else:
+                        dispatcher.utter_message(template="utter_ask_city")
+                        mess = tracker.latest_message['entities'][0].get('value')
+                        print("messes: /{}", mess)
                         return [SlotSet('country', mess)]
 
-                    if slot == "city":
-                        ask_country = tracker.get_slot("country")
-                        if(ask_country == "Việt Nam"):
-                            
-                            return [SlotSet('country', None)]
-                        else:
-                            dispatcher.utter_template("utter_ask_ask_city", tracker)
-                            mess = tracker.latest_message.get("text")
-                            return [SlotSet('country', mess)]
         return None
 
 
     def submit(self, dispatcher, tracker, domain) -> List[Dict]:
         # do something here
         intent = tracker.latest_message['intent'].get('name')
-        print(type(intent))
-        # if intent = ask_all
-
-
-        # intent != ask_all
-        request_next_slot(self, dispatcher, tracker, domain)
-
         print(intent)
+        # intent = intent.split('_')
+        # print(intent)
+        country = tracker.get_slot("country")
+        city = tracker.get_slot("city")
+        print(country, city[0])
+        if country == "Việt Nam":
+            data = run_query(fetching_general_data.vietnam_status)['totalVietNam']
+
+            message_title = "Thông tin Việt Nam\nconfirmed: ", data['confirmed']
+            dispatcher.utter_message(text=message_title)
+
         return []

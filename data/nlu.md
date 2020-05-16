@@ -281,7 +281,7 @@
 - Tình hình thế giới ra sao rồi?
 - Thế giới thế nào rồi
 
-## intent:ask_country
+## intent:inform
 - [Việt Nam](country)
 - Cho hỏi tình hình [Việt Nam](country)
 - [Việt Nam](country) sao rồi?
@@ -492,8 +492,6 @@
 - Zaire [xem tên mới Congo, Democratic Republic of] -->
 - [Zambia](country)
 - [Zimbabwe](country)
-
-## intent:ask_city
 - [An Giang](city)
 - [Bà Rịa - Vũng Tàu](city)
 - [Bắc Giang](city)

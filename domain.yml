@@ -12,7 +12,7 @@ intents:
   - ask_confirm
   - ask_resolve
   - ask_all
-  - ask_VN
+  - inform
   - out_of_scope
 
 actions:
@@ -29,10 +29,10 @@ forms:
   - form_ask_covid
 
 slots:
-    country:
-      type: unfeaturized
-    city:
-      type: unfeaturized
+  country:
+    type: unfeaturized
+  city:
+    type: unfeaturized
 
 
 responses:
@@ -66,10 +66,10 @@ responses:
   - text: "Mình có thể giúp gì được bạn? =)"
   - text: "Được giúp đỡ bạn là niềm vinh hạnh cho Corasa :D"
 
-  utter_ask_ask_country:
+  utter_ask_country:
   - text: "Bạn muốn biết thông tin về Việt Nam hay quốc gia nào?"
 
-  utter_ask_ask_city:
+  utter_ask_city:
   - text: "Thành phố nào mà bạn quan tâm đến vậy?"
 
   utter_ask_resolve:
