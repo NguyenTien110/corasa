@@ -12,7 +12,8 @@ from crawl_data.fetching_general_data import run_query
 from typing import Any, Text, Dict, List, Union
 
 import logging
-logger = logging.Logger(__name__)
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 import json
 
@@ -26,6 +27,7 @@ from rasa_sdk.events import (
     EventType,
     ActionExecuted,
     UserUttered,
+    AllSlotsReset,
 )
 
 class ActionGreetUser(Action):
@@ -127,62 +129,75 @@ class ActionAskCovidInfor(FormAction):
     def name(self) -> Text:
         return "form_ask_covid"
 
+    def __init__(self) -> None:
+        self.intent = ''
+        self.check = False
+
     @staticmethod
     def required_slots(tracker: Tracker) -> List[Text]:
         return ["country", "city"]
-    def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
-        return {
-            "country": [
-                self.from_entity(entity="country"),
-                self.from_text(intent="inform"),
-            ],
-            "city": [
-                self.from_entity(entity="city"),
-                self.from_text(intent="inform")
-            ],
-        }
 
     def request_next_slot(self, dispatcher, tracker, domain):
         user_message = tracker.latest_message.get("text")
         logger.debug(user_message)
-
-        for slot in self.required_slots(tracker):
-            if self._should_request_slot(tracker, slot):
-                logger.debug("Request next slot '%s'", slot)
-                if slot == "country":
-                    dispatcher.utter_message(template="utter_ask_country")
-                    mess = tracker.latest_message['entities']
-
-                    print("messes: /{}", mess, type(mess))
-                    return [SlotSet('country', mess)]
-
-                if slot == "city":
-                    country = tracker.get_slot("country")
-                    if(country == "Việt Nam"):
-                        
-                        return [SlotSet('country', None)]
-                    else:
-                        dispatcher.utter_message(template="utter_ask_city")
-                        mess = tracker.latest_message['entities'][0].get('value')
-                        print("messes: /{}", mess)
+        intent = tracker.latest_message['intent'].get('name')
+        if self.check == False:
+            self.intent = intent
+            self.check = True
+        if user_message == "!end_form":
+            return self.deactivate()
+        else:
+            for slot in self.required_slots(tracker):
+                if self._should_request_slot(tracker, slot):
+                    logger.debug("Request next slot '%s'", slot)
+                    if slot == "country":
+                        dispatcher.utter_message(template="utter_ask_country")
+                        mess = tracker.latest_message['entities']
                         return [SlotSet('country', mess)]
 
+                    if slot == "city":
+                        dispatcher.utter_message(template="utter_ask_city")
+                        mess = tracker.latest_message['entities'][0].get('value')
+                        return [SlotSet('city', mess)]
         return None
 
-
     def submit(self, dispatcher, tracker, domain) -> List[Dict]:
-        # do something here
-        intent = tracker.latest_message['intent'].get('name')
-        print(intent)
-        # intent = intent.split('_')
-        # print(intent)
         country = tracker.get_slot("country")
         city = tracker.get_slot("city")
-        print(country, city[0])
-        if country == "Việt Nam":
-            data = run_query(fetching_general_data.vietnam_status)['totalVietNam']
+        arr = []
+        message_title = ''
+        if country[0] == "Việt Nam":
+            data = run_query(fetching_general_data.provinces_vietnam_status)['provinces']
+            arr = [i for i in data if i['Province_Name'] == city[0]]
+            if len(arr) == 0:
+                message_title = "Thành phố " + city[0] + ", Việt Nam chưa có ca nhiễm nào."
+            else:
+                if self.intent == 'ask_all':
+                    message_title = "Thông tin Việt Nam:\nSố ca xác nhận dương tính: " + arr[0]['Confirmed'] + "\nSố ca tử vong: " + arr[0]['Deaths'] + "\nSố ca đã chữa khỏi: " + arr[0]['Recovered']
+                elif self.intent == 'ask_death':
+                    message_title = "Số ca tử vong ở " + city[0] +", Việt Nam là: " + arr[0]['Deaths']
+                elif self.intent == 'ask_resolve':
+                    message_title = "Số ca đã chữa khỏi ở " + city[0] +", Việt Nam là: " + arr[0]['Recovered']
+                elif self.intent == 'ask_confirm':
+                    message_title = "Số ca xác nhận dương tính ở " + city[0] +", Việt Nam là: " + arr[0]['Confirmed']
+        else:
+            data = run_query(fetching_general_data.global_status)['globalCasesToday']
+            arr = [i for i in data if i['country'] == country[0]]
+            message_title = 'Hiện chúng tôi chưa cập nhật được số liệu của thành phố ' + city[0] + ' tại ' + country[0] + ' hoặc thành phố này không tồn tại.\nChúng tôi sẽ đưa ra các thông tin chung.\n'
+            if self.intent == 'ask_all':
+                message_title = message_title + "Thông tin " + arr[0]['country'] + ":\nSố ca xác nhận dương tính: " + arr[0]['totalCase'] + "\nSố ca tử vong: " + arr[0]['totalDeaths'] + "\nSố ca đã chữa khỏi: " + arr[0]['totalRecovered']
+            elif self.intent == 'ask_death':
+                message_title = message_title + "Số ca tử vong ở " + arr[0]['country'] + " là: " + arr[0]['totalDeaths']
+            elif self.intent == 'ask_resolve':
+                message_title = message_title + "Số ca đã chữa khỏi ở " + arr[0]['country'] + " là: " + arr[0]['totalRecovered']
+            elif self.intent == 'ask_confirm':
+                message_title = message_title + "Số ca xác nhận dương tính ở " + arr[0]['country'] + " là: " + arr[0]['totalCase']
 
-            message_title = "Thông tin Việt Nam\nconfirmed: ", data['confirmed']
-            dispatcher.utter_message(text=message_title)
+        dispatcher.utter_message(text=message_title)
 
-        return []
+        self.deactivate()
+        
+        self.intent = ''
+        self.check = False
+
+        return [AllSlotsReset()]

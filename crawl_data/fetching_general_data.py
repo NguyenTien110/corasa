@@ -85,5 +85,9 @@ def run_query(query):  # A simple function to use requests.post to make the API 
 # result = run_query(totalRecovered)
 # result = run_query(totalDeaths)
 # result = run_query(provinces_VietNam_status)
-# result = run_query(global_status)
-# print(result['confirmed'])
+# result = run_query(global_status)['globalCasesToday']
+
+# with open('C:\\Users\\tienm\\Documents\\corasa\\country.txt','w') as f:
+#   for i in range(len(result)):
+#     print(result[i]['country'])
+#     f.writelines("- [" + result[i]['country'] + "](country)\n")

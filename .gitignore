@@ -3,3 +3,4 @@
 models/
 __pycache__/
 credentials.yml
+crawl_data/__pycache__/
