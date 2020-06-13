@@ -63,19 +63,17 @@ class ActionDefaultAskAffirmation(Action):
     ) -> List[EventType]:
 
         intent_ranking = tracker.latest_message.get("intent_ranking", [])
-        print(len(intent_ranking))
-        print(intent_ranking)
         if len(intent_ranking) > 1:
             diff_intent_confidence = intent_ranking[0].get("confidence") - intent_ranking[1].get("confidence")
             if diff_intent_confidence < 0.2:
-                intent_ranking = intent_ranking[:2]
+                intent_ranking = intent_ranking[:4]
             else:
-                intent_ranking = intent_ranking[:1]
+                intent_ranking = intent_ranking[:3]
         print(intent_ranking)
         first_intent_names = [
-            intent.get("name", "").get()
+            intent['name']
             for intent in intent_ranking
-            if intent.get("name", "") != "out_of_scope"
+            if intent['name'] != "out_of_scope"
         ]
 
         message_title = (
@@ -100,7 +98,7 @@ class ActionDefaultAskAffirmation(Action):
 
         buttons.append(
             {
-                "title": "Something else",
+                "title": "Câu hỏi khác.",
                 "payload": "Tôi hỏi câu khác :(",
             }
         )
@@ -151,6 +149,22 @@ class ActionAskCovidInfor(FormAction):
                 if self._should_request_slot(tracker, slot):
                     logger.debug("Request next slot '%s'", slot)
                     if slot == "country":
+                        message_title = ''
+                        if self.intent == 'ask_all':
+                            data = run_query(fetching_general_data.global_status)['globalCasesToday']
+                            pr = [re for re in data if re['country'] == 'Total:']
+                            message_title = "Thông tin dịch bệnh trên toàn thế giới:\nSố ca xác nhận dương tính: " + str(pr[0]['totalCase']) + "\nSố ca tử vong: " + str(pr[0]['totalDeaths']) + "\nSố ca đã chữa khỏi: " + str(pr[0]['totalRecovered'])
+                        elif self.intent == 'ask_death':
+                            data = run_query(fetching_general_data.death_global)
+                            message_title = "Số ca tử vong trên toàn thế giới là: " + str(data['totalDeaths']) + "\nTrong 24 giờ qua đã có thêm " + str(data['totalDeaths'] - data['totalDeathsLast']) + " ca tử vong trên toàn thế giới.\n"
+                        elif self.intent == 'ask_resolve':
+                            data = run_query(fetching_general_data.resolve_global)
+                            message_title = "Số đã chữa khỏi trên toàn thế giới là: " + str(data['totalRecovered']) + "\nTrong 24 giờ qua đã có thêm " + str(data['totalRecovered'] - data['totalRecoveredLast']) + " ca đã được chữa khỏi trên toàn thế giới.\n"
+                        elif self.intent == 'ask_confirm':
+                            data = run_query(fetching_general_data.confirm_global)
+                            message_title = "Số xác nhận dương tính trên toàn thế giới là: " + str(data['totalConfirmed']) + "\nTrong 24 giờ qua đã có thêm " + str(data['totalConfirmed'] - data['totalConfirmedLast']) + " ca đã xác nhận nhiễm virus COVID-19 trên toàn thế giới.\n"
+                        
+                        dispatcher.utter_message(text=message_title)
                         dispatcher.utter_message(template="utter_ask_country")
                         mess = tracker.latest_message['entities']
                         return [SlotSet('country', mess)]

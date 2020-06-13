@@ -14,6 +14,7 @@ intents:
   - ask_all
   - inform
   - out_of_scope
+  - other_question
 
 actions:
   - respond_faq
@@ -67,7 +68,7 @@ responses:
   - text: "Được giúp đỡ bạn là niềm vinh hạnh cho Corasa :D"
 
   utter_ask_country:
-  - text: "Bạn muốn biết thông tin về Việt Nam hay quốc gia nào?"
+  - text: "Bạn muốn biết thêm thông tin về Việt Nam hay quốc gia nào?"
 
   utter_ask_city:
   - text: "Thành phố nào mà bạn quan tâm đến vậy?"
@@ -87,6 +88,8 @@ responses:
   utter_out_of_scope:
   - text: "Xin lỗi, tôi không thể xử lý vấn đề này."
 
+  utter_other_question:
+  - text: "Tiếp tục nào =)"
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

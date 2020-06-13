@@ -71,4 +71,10 @@
   - form{"name": "form_ask_covid"}   <!--Activate the form-->
   - form{"name": null}               <!--Deactivate the form-->
 
+## out of scope
+* out_of_scope
+  - action_default_ask_affirmation
 
+## other_question
+* other_question
+  - utter_other_question

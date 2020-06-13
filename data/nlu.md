@@ -292,6 +292,7 @@
 - Dịch gây thiệt hại cho [Việt Nam](country) như thế nào?
 - [Việt Nam](country) có bị sao không?
 - Tôi muốn biết tình trạng [Việt Nam](country)
+- Tình trạng [Việt Nam](country)
 - Tôi lo cho [Việt Nam](country) 
 - [Việt Nam](country)
 - [United States](country)
@@ -586,3 +587,6 @@
 - Ai là?
 - 2 + 1 bằng mấy
 - Tôi muốn người yêu
+
+## intent:other_question
+- Câu hỏi khác.
