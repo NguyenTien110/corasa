@@ -1,12 +1,12 @@
 # Corasa - the project II semester 20192
 
-## 🌍 Tổng quan
+## 🌍  Tổng quan
 
 Để phục vụ mục đích môn Đồ án II tại Trường Đại học Bách khoa Hà Nội, tôi có sử dụng Framework Rasa tạo ra 1 sản phẩm Chatbot: Corasa - kết nối với facebook messenger. 
 
 Nhiệm vụ của Bot là đưa ra các lời khuyên, số liệu liên quan đến dịch COVID-19 mà người dùng muốn.
 
-## 👷‍ Cài đặt
+## 👷 ‍ Cài đặt
 
 Để cài đặt Framework Rasa, hãy clone repo này về và chạy:
 
@@ -20,7 +20,7 @@ Việc này để cài đặt Bot và tất cả những thứ nó cần.
 
 Chú ý: nên dùng [python 3.6](https://www.python.org/downloads/release/python-360/) hoặc [3.7](https://www.python.org/downloads/release/python-370/).
 
-## 🤖 To run Sara:
+## 🤖  To run Sara:
 
 Đầu tiên hãy chạy lệnh sau:
 ```bash
@@ -30,7 +30,7 @@ rasa run actions
 Sau đó hãy chạy lệnh `rasa train` để train model (có thể dùng tùy chọn `--fixed-model-name=corasa` để đặt tên cho model có tên là 'corasa'; nếu muốn train nhanh hơn hãy chạy thêm: `--augmentation 0`).
 
 
-## 👩‍💻 Tổng quan các phần chính trong Corasa
+## 👩‍💻  Tổng quan các phần chính trong Corasa
 
 `data/stories.md` - Gồm các kịch bản có thể sẽ có.
 
@@ -42,7 +42,7 @@ Sau đó hãy chạy lệnh `rasa train` để train model (có thể dùng tùy
 
 `config.yml` - File cấu hình cho NLU và các tất cả policy cho Bot.
 
-## 😉 Một số command line khác
+## 😉  Một số command line khác
 
 `rasa init` - Tạo 1 project mới với các file data, config, domain mặc định.
 
@@ -58,7 +58,7 @@ Sau đó hãy chạy lệnh `rasa train` để train model (có thể dùng tùy
 
 `rasa visualize` - Mô hình hóa các trường hợp của cuộc trò chuyện.
 
-## ⚫️ Tài liệu tham khảo:
+## ⚫️  Tài liệu tham khảo:
 
 - Các [câu hỏi thường gặp](https://www.who.int/news-room/q-a-detail/q-a-coronaviruses) lấy từ trang chủ Tổ chức Y tế thế giới WHO.
 
@@ -70,7 +70,7 @@ Sau đó hãy chạy lệnh `rasa train` để train model (có thể dùng tùy
 
 - [Bot](https://github.com/RasaHQ/rasa-demo/) demo của rasa.
 
-## 🎁 Dữ liệu lấy từ nguồn internet:
+## 🎁  Dữ liệu lấy từ nguồn internet:
 
 Trong project này tôi có lấy dữ liệu chi tiết của [Việt Nam](https://corona.kompa.ai/)
 và thêm vào đó là tham khảo nhật ký các tình trạng COVID-19 [toàn thế giới](https://github.com/CSSEGISandData/COVID-19).
