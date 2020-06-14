@@ -44,7 +44,9 @@ responses:
 
   utter_goodbye:
   - text: "Bye bye bạn tôi nhé!"
+    image: "https://image.freepik.com/free-vector/flat-cartoon-illustration-earth-corona-covid-19-virus_69135-695.jpg"
   - text: "Bái bai ..."
+    image: "https://image.freepik.com/free-vector/flat-cartoon-illustration-earth-corona-covid-19-virus_69135-695.jpg"
 
   utter_affirm:
   - text: "Ha..ha.."
