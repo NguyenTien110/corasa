@@ -1,0 +1,14 @@
+[
+  {
+    "text": "Total:",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Total:",
+        "entity": "country"
+      }
+    ],
+    "predicted_entities": []
+  }
+]

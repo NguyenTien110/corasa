@@ -1,6 +1,5 @@
 import requests
 
-fetch_url = 'https://corona-api.kompa.ai/graphql'
 vietnam_status = """query totalVietNam {
   totalVietNam {
     confirmed
@@ -58,6 +57,8 @@ provinces_vietnam_status = """query provinces {
   }
 }"""
 
+fetch_url = 'https://corona-api.kompa.ai/graphql'
+
 global_status = """query countries {
     globalCasesToday {
         country
@@ -85,8 +86,8 @@ def run_query(query):  # A simple function to use requests.post to make the API 
 # result = run_query(totalRecovered)
 # result = run_query(totalDeaths)
 # result = run_query(provinces_VietNam_status)
-# result = run_query(global_status)['globalCasesToday']
-
+# result = run_query(global_status)
+# print(result)
 # with open('C:\\Users\\tienm\\Documents\\corasa\\country.txt','w') as f:
 #   for i in range(len(result)):
 #     print(result[i]['country'])

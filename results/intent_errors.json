@@ -1,0 +1,10 @@
+[
+  {
+    "text": "Câu hỏi khác.",
+    "intent": "other_question",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.9425434470176697
+    }
+  }
+]
