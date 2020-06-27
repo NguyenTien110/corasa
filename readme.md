@@ -58,6 +58,8 @@ Sau đó hãy chạy lệnh `rasa train` để train model (có thể dùng tùy
 
 `rasa visualize` - Mô hình hóa các trường hợp của cuộc trò chuyện.
 
+`rasa run --endpoints endpoints.yml --credentials credentials.yml ` - Chạy api chatbot.
+
 ## ⚫️  Tài liệu tham khảo:
 
 - Các [câu hỏi thường gặp](https://www.who.int/news-room/q-a-detail/q-a-coronaviruses) lấy từ trang chủ Tổ chức Y tế thế giới WHO.
